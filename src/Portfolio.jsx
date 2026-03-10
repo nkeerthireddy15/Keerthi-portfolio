@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Projects from "./Components/Projects";
 
 /* ═══════════════════════════════════════════════
    GLOBAL STYLES
@@ -7,9 +8,11 @@ const GlobalStyles = () => (
   <style>{`
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap');
 
-   :root {
+  :root {
+
   --accent: #22c55e;
   --accent-soft: rgba(34,197,94,0.15);
+  --accent-glow: rgba(34,197,94,0.35);
 
   --bg: #0b0b0f;
   --surface: #13131a;
@@ -20,6 +23,7 @@ const GlobalStyles = () => (
   --heading: #ffffff;
   --text: #d4d4dc;
   --muted: #9a9aa5;
+
 }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -529,7 +533,7 @@ const HeroSection = () => (
     className="relative z-10 flex items-center min-h-screen pt-16 overflow-hidden"
   >
     <div className="px-10 w-full">
-      <div className="hero-light" />
+      {/* <div className="hero-light" /> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
         {/* LEFT SIDE */}
@@ -1252,7 +1256,7 @@ const ExperienceSection = () => {
               className="hidden md:block absolute left-0 top-0 bottom-0"
               style={{
                 width: "1px",
-                background: "var(--border)",
+                // background: "var(--border)",
               }}
             />
 
@@ -1260,9 +1264,9 @@ const ExperienceSection = () => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className="relative text-left text-black bg-gray-200 px-6 py-4 font-dm-mono text-[12px] tracking-[1px] transition-all duration-300"
+                className="relative text-left text-black bg-gray-800 px-6 py-4 font-dm-mono text-[12px] tracking-[1px] transition-all duration-300"
                 style={{
-                  color: active === i ? "var(--accent)" : "var(--muted)",
+                  color: active === i ? "text-[#000000]" : "var(--muted)",
                 }}
               >
                 {active === i && (
@@ -1273,7 +1277,7 @@ const ExperienceSection = () => {
                       top: 0,
                       bottom: 0,
                       width: "2px",
-                      background: "var(--accent)",
+                      //   background: "var(--accent)",
                     }}
                     className="text-black"
                   />
@@ -1529,7 +1533,8 @@ export default function Portfolio() {
         }}
       />
       <SkillsSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
+      <Projects />
       <ExperienceSection />
       <ContactSection />
       <Footer />
