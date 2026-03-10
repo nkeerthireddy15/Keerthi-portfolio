@@ -1,50 +1,65 @@
 import { useState, useRef, useEffect } from "react";
+import sharoff from "../assets/ss-p.png";
+import osi from "../assets/osi-p.png";
+import grabit from "../assets/grabit-p.png";
+import axio from "../assets/axio-p.png";
+import skibo from "../assets/skibboo-p.png";
 
 const PROJECTS = [
   {
     num: "01",
-    title: "Nexus Design System",
-    tag: "Design Infrastructure",
+    title: "Skibboo",
+    tag: "Skibboo - Discover & Plan the Perfect Playdate for Kids and Teens!",
     year: "2024",
-    desc: "Token-driven system at scale. 80+ components, dark/light, Figma ↔ code sync.",
-    stack: ["React", "TypeScript", "Storybook"],
+    desc: "Skibboo is India’s first parent-first kids playdate app that helps you discover, plan, and join safe neighborhood playdates and studydates combining kids’ social growth with academic value, all in one trusted community.",
+    stack: ["ReactNative", "Node.js", "tailwind CSS", "javascript", "MongoDb"],
     color: "#22c55e",
+    live: "https://play.google.com/store/apps/details?id=com.skibboo&hl=en_IN",
+    img: skibo,
   },
   {
     num: "02",
-    title: "Orbit Analytics",
-    tag: "Data Visualisation",
-    year: "2024",
-    desc: "Real-time dashboard. D3 charts, 60fps canvas rendering for million-row datasets.",
-    stack: ["D3.js", "WebGL", "Postgres"],
+    title: "Axios Stat",
+    tag: "Bharat ka bandage",
+    year: "2026",
+    desc: "Axio Biosolutions is a global medical technology company delivering advanced hemostatic wound care solutions for emergency, surgical, and trauma care.",
+    stack: ["React.Js", "javascript", "Tailwind CSS", "Node.Js", "MongoDb"],
     color: "#22c55e",
+    live: "https://axiobio.com/",
+    img: axio,
   },
   {
     num: "03",
-    title: "Flux CMS",
-    tag: "Content Platform",
-    year: "2023",
-    desc: "Headless CMS with live collaborative editor and structured content API.",
-    stack: ["Next.js", "tRPC", "Redis"],
+    title: "Grabit Customer",
+    tag: "",
+    year: "2024",
+    desc: "Welcome to GrabIt, the ultimate app for ordering a variety of products and getting them delivered straight to your door! Whether it’s groceries, essentials, or anything in between, we ensure a fast and reliable delivery experience.",
+    stack: ["ReactNative", "Node.js", "tailwind CSS", "javascript", "MongoDb"],
     color: "#22c55e",
+    live: "https://play.google.com/store/apps/details?id=com.grabitcustomer",
+    img: grabit,
   },
   {
     num: "04",
-    title: "Cipher Auth",
-    tag: "Security SDK",
-    year: "2023",
-    desc: "Passkey-first auth SDK. Drop-in React components and a zero-dep vanilla core.",
-    stack: ["WebAuthn", "Hono", "Workers"],
+    title: "OSI India",
+    tag: "",
+    year: "2024",
+    desc: "A non-profit professional association promoting evidence-based implantology practices calibrated to international standards.",
+    stack: ["React.Js", "javascript", "Tailwind CSS", "Node.Js", "MongoDb"],
     color: "#22c55e",
+    live: "https://osindia.org/",
+    img: osi,
   },
   {
     num: "05",
-    title: "Pulse Notify",
-    tag: "Infrastructure",
+    title: "Sharoff Steel",
+    tag: "Future Of Construction",
     year: "2023",
-    desc: "Multi-channel notification infra. Email, SMS, push and webhooks in one API.",
-    stack: ["Go", "Kafka", "gRPC"],
+    desc: "A responsive corporate website built to showcase Sharoff Steel’s products, services, and company profile with a clean design and smooth user experience.",
+    stack: ["React.Js", "javascript", "Tailwind CSS", "Node.Js", "MongoDb"],
     color: "#22c55e",
+    live: "https://sharoffsteel.com/",
+    img: sharoff,
   },
 ];
 
@@ -360,9 +375,24 @@ export default function App() {
           margin-bottom: 32px;
           position: relative;
           z-index: 1;
-          max-width: 380px;
+          max-width: 580px;
         }
+.ps-card-image{
+width:100%;
+height:220px;
+border-radius:6px;
+overflow:hidden;
+margin-bottom:24px;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
 
+.ps-card-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .6s;
+}
         .ps-card-stack {
           display: flex;
           flex-wrap: wrap;
@@ -413,10 +443,12 @@ export default function App() {
           text-transform: uppercase;
           color: rgba(255,255,255,.3);
           text-decoration: none;
+          display:inline-flex;
+width:fit-content;
           padding: 7px 16px;
           border: 1px solid rgba(255,255,255,.1);
           transition: all .2s;
-          display: flex;
+          
           align-items: center;
           gap: 6px;
         }
@@ -539,8 +571,22 @@ export default function App() {
 
               <div className="ps-card-big-num">{proj.num}</div>
               <div className="ps-card-tag">{proj.tag}</div>
-              <h3 className="ps-card-title text-base">{proj.title}</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="ps-card-title text-base">{proj.title}</h3>
+
+                <a
+                  href={proj.live}
+                  target="_blank"
+                  className="ps-card-link filled"
+                >
+                  Live ↗
+                </a>
+              </div>
               <p className="ps-card-desc text-lg">{proj.desc}</p>
+
+              <div className="ps-card-image">
+                <img src={proj.img} alt={proj.title} />
+              </div>
               <div className="ps-card-stack">
                 {proj.stack.map((s) => (
                   <span key={s} className="ps-card-chip">
@@ -548,37 +594,9 @@ export default function App() {
                   </span>
                 ))}
               </div>
-              <div className="ps-card-footer">
-                <span className="ps-card-year">{proj.year}</span>
-                <div className="ps-card-links">
-                  <a href="#" className="ps-card-link">
-                    GitHub ↗
-                  </a>
-                  <a href="#" className="ps-card-link filled">
-                    Live ↗
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-
-        {/* progress bar */}
-        {/* <div className="ps-progress">
-          <span className="ps-prog-label">
-            {String(active + 1).padStart(2, "0")} /{" "}
-            {String(PROJECTS.length).padStart(2, "0")}
-          </span>
-          <div className="ps-prog-bar">
-            <div
-              className="ps-prog-fill"
-              style={{
-                width: `${((active + 1) / PROJECTS.length) * 100}%`,
-                background: proj.color,
-              }}
-            />
-          </div>
-        </div> */}
       </div>
     </>
   );

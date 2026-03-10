@@ -342,40 +342,20 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    tab: "Company One",
+    tab: "Adze Studio",
     role: "Full-Stack Developer",
-    company: "@ Company One",
+    company: "Adze Studio",
     date: "Jan 2024 — Present · Full-time",
     items: [
-      "Built and maintained 3 React + Node.js apps serving 10k+ monthly active users",
-      "Designed scalable MongoDB schemas with aggregation pipelines, reducing query times by 60%",
-      "Implemented JWT-based auth with role-based access control across microservices",
-      "Led migration from REST to GraphQL, improving data-fetching efficiency",
-      "Introduced CI/CD with GitHub Actions, cutting deploy time from 30 min to 5 min",
-    ],
-  },
-  {
-    tab: "Company Two",
-    role: "Frontend Developer",
-    company: "@ Company Two",
-    date: "Jun 2023 — Dec 2023 · Full-time",
-    items: [
-      "Developed pixel-perfect UI from Figma designs using React + Tailwind CSS",
-      "Integrated 10+ REST APIs and managed complex state with Redux Toolkit",
-      "Improved Lighthouse score from 62 to 94 via code splitting and lazy loading",
-      "Collaborated with backend team to define and consume RESTful API contracts",
-    ],
-  },
-  {
-    tab: "Freelance",
-    role: "Freelance Developer",
-    company: "@ Self-Employed",
-    date: "Jan 2023 — May 2023 · Contract",
-    items: [
-      "Delivered 8+ end-to-end MERN projects for e-commerce, education and SaaS clients",
-      "Handled requirements gathering, development, deployment and post-launch support",
-      "Built reusable component libraries and coding standards for small teams",
-      "Maintained 100% on-time delivery rate with strong client communication",
+      "Designed modular backend APIs and optimized MongoDB queries using indexes and aggregations, reducing response time by 40%.",
+      "Implemented location-based outlet filtering (like Swiggy/Zomato), increasing order accuracy for users.",
+      "Built real-time delivery tracking with Google Maps + Directions API.",
+      "Integrated Stripe, Paypal and Razorpay payments, saved cards",
+      "uilt a 60-second order acceptance timer with preserved state, reducing false order timeouts by 100%.",
+      "mplemented advanced FCM push notifications with auto navigation.",
+      "Improved Core Web Vitals (LCP, FCP, TBT), boosting site performance by 30% and SEO ranking visibility.",
+      "Integrated WhatsApp (Commbirds API) for OTP and messaging.",
+      "anaged website deployments on DigitalOcean using NGINX, PM2, and streamlined CI/CD pipelines.",
     ],
   },
 ];
