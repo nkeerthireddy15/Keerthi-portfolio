@@ -18,7 +18,7 @@ import {
   UserRound,
   X,
 } from "lucide-react";
-
+// "C:\Users\Administrator\Downloads\Keerthi_reddy_v1.pdf"
 import axio from "./assets/axio-p.png";
 import osi from "./assets/osi-p.png";
 import skibboo from "./assets/skibboo-p.png";
@@ -353,7 +353,7 @@ function App() {
 
                       <a
                         className="pixel-button"
-                        href="/keerthi__v3.pdf"
+                        href="/Resume.pdf"
                         download
                       >
                         Resume <FileDown />
@@ -735,7 +735,7 @@ function App() {
                   </a>
 
                   <a
-                    href="/Keerthi_N_Resume.pdf"
+                    href="/Resume.pdf"
                     download
                   >
                     Download resume
